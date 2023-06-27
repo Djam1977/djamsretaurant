@@ -1,0 +1,56 @@
+/* .contact-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  flex-wrap: nowrap;
+  flex-direction: column;
+} */
+.titre {
+  background-image: url("/assets/img/restotitre.jpg");
+
+  font-size: 24px;
+
+  text-align: center;
+  /*hauteur 100vh ( 4vh de logo+ 4vh de header +24px de padding dans le header) */
+  height: calc(92vh - 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h1 {
+  color: var(--primary-color);
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+hr {
+  background-color: orange;
+  height: 0.5vh;
+  margin: 2vh;
+}
+
+@media screen and (min-width: 1200px) {
+  .titre {
+    font-size: 30px;
+  }
+  img {
+    height: 100%;
+  }
+  hr {
+    height: 1vh;
+    /* margin:haut et bas  de 8vh et margin droit et gauche de 16vh*/
+    margin: 8vh 24vh;
+   
+  }
+}
