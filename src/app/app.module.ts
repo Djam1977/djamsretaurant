@@ -10,7 +10,8 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ConceptComponent } from './pages/concept/concept.component';
 
 import { FlatComponent } from './pages/flat/flat.component';
-import { MessageComponent } from './pages/admin/message/message.component';
+import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,11 @@ import { MessageComponent } from './pages/admin/message/message.component';
     MenuComponent,
     ConceptComponent,
     FlatComponent,
-    MessageComponent,
+    GoldenBookComponent,
+    
+   
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,],
   providers: [],
   bootstrap: [AppComponent],
 })

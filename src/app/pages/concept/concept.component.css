@@ -1,0 +1,42 @@
+
+.concept-decript {
+  margin: 8vh 4vh;
+  font-size: 1.25em;
+;
+}
+img {
+  margin: 2vh 0 ;
+  width: 100%;
+}
+
+
+@media screen and (min-width: 1200px) {
+
+  .concept-decript {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4vh 4vw 0vh 4vh;
+    /* height: calc(60vh - 24px) */
+  
+  }
+  /* Dans le bloc,la pseudo classe nth-child fait le tour des p avec une itération pour pouvoir mettre le texte au dessus des images */
+  .concept-decript p:nth-child(n ) {
+    order: -1;
+  
+  }
+
+  .concept-decript img:nth-child(n ) {
+    order: 0;
+  }
+  img {
+    width: 33%;
+    padding: 16px 16px 0px 0px;
+    margin: 0vh  ;
+  } 
+   
+ /* Au hover agrandissement de la photox 1.2 en 0.8s  */
+  img:hover {
+    transform: scale(1.03);
+    transition: 0.8s;
+  }
+}

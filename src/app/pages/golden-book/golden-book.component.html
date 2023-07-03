@@ -1,0 +1,108 @@
+<h1>
+  <div class="color-orange">L</div>
+  ivre d'Or
+</h1>
+<!-- Message soumis que si commentForm.valid et ses condition son remplies renvoie true -->
+<form
+  (ngSubmit)="commentForm.valid && onSubmitForm()"
+  [formGroup]="commentForm"
+  #myForm="ngForm"
+>
+  <div class="container-column-mobile">
+    <fieldset>
+      <label for="lastname">Nom : </label>
+      <input
+        type="text"
+        id="lastname"
+        placeholder="Tapez votre nom"
+        formControlName="lastnameController"
+      />
+    </fieldset>
+    <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
+    <div
+      *ngIf="myForm.submitted && commentForm.controls.lastnameController.errors"
+    >
+      <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+      <span
+        *ngIf="commentForm.controls.lastnameController.errors?.['required']"
+      >
+        Le champ nom est requis.
+      </span>
+    </div>
+
+    <fieldset>
+      <label for="firstName">Prénom : </label>
+      <input
+        type="text"
+        id="firstname"
+        placeholder="Tapez votre prénom"
+        formControlName="firstnameController"
+      />
+    </fieldset>
+    <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
+    <div
+      *ngIf="
+        myForm.submitted && commentForm.controls.firstnameController.errors
+      "
+    >
+      <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+      <span
+        *ngIf="commentForm.controls.firstnameController.errors?.['required']"
+      >
+        Le champ prénom est requis.
+      </span>
+    </div>
+  </div>
+  <fieldset>
+    <label for="email">Email : </label>
+    <input
+      type="email"
+      id="email"
+      placeholder="toto@exemple.com"
+      formControlName="emailController"
+    />
+    <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
+  </fieldset>
+  <div *ngIf="myForm.submitted && commentForm.controls.emailController.errors">
+    <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+    <span *ngIf="commentForm.controls.emailController.errors?.['required']">
+      Le champ email est requis.
+    </span>
+    <span *ngIf="commentForm.controls.emailController.errors?.['email']">
+      Un format email est requis.
+    </span>
+  </div>
+
+  <fieldset class="message">
+    <label for="message">Message : </label>
+
+    <textarea
+      type="text"
+      id="name"
+      class="contenu"
+      placeholder="Tapez votre méssage"
+      formControlName="messageController"
+    >
+    </textarea>
+  </fieldset>
+  <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
+  <div
+    *ngIf="myForm.submitted && commentForm.controls.messageController.errors"
+  >
+    <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+    <span *ngIf="commentForm.controls.messageController.errors?.['required']">
+      Le champ message est requis.
+    </span>
+
+    <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+    <span *ngIf="commentForm.controls.messageController.errors?.['minlength']">
+      Le champ doit contenir au minimum 5 caractéres.
+    </span>
+    <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+    <span *ngIf="commentForm.controls.messageController.errors?.['maxlength']">
+      Le champ doit contenir au maximum 2000 caractéres.
+    </span>
+  </div>
+
+  <button type="submit">Soumettre</button>
+</form>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessageComponent } from './message.component';
+import { GoldenBookComponent } from './golden-book.component';
 
-describe('MessageComponent', () => {
-  let component: MessageComponent;
-  let fixture: ComponentFixture<MessageComponent>;
+describe('GoldenBookComponent', () => {
+  let component: GoldenBookComponent;
+  let fixture: ComponentFixture<GoldenBookComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MessageComponent ]
+      declarations: [ GoldenBookComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MessageComponent);
+    fixture = TestBed.createComponent(GoldenBookComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

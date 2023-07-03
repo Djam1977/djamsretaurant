@@ -1,14 +1,15 @@
 * {
-
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
   padding: 0;
   list-style: none;
   font-family: Montserrat, sans-serif;
-
 }
-
+.color-orange {
+  font-size: 3rem;
+  color: orange;
+}
 
 :root {
   --primary-color: white;
@@ -18,9 +19,18 @@
 .display-none-mobile {
   display: none;
 }
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  font-size: 3em;
+}
 
 @media screen and (min-width: 1025px) {
   .display-none-mobile {
     display: block;
   }
+}
+
+@media screen and (min-width: 1200px) {
 }
