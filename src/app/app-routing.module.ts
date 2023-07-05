@@ -6,6 +6,7 @@ import { ConceptComponent } from './pages/concept/concept.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { FlatComponent } from './pages/flat/flat.component';
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
+import { PageErrorComponent } from './pages/page-error/page-error.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,14 @@ const routes: Routes = [
   {
     path: 'plat',
     component: FlatComponent,
+  },
+  {
+    path: 'error404',
+    component: PageErrorComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'error404',
   },
 ];
 

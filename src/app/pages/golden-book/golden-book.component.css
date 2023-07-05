@@ -1,5 +1,8 @@
 
 form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   padding-top: 4vh;
 }
 
@@ -17,13 +20,25 @@ fieldset {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 48px;
+  min-height: 48px;
+  flex-wrap: wrap;
+}
+fieldset>div{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100vw;
+}
+/* etoile bien disposées */
+i{
+ width: calc(70%/5);
+  
 }
 input {
   border: 1.5px black solid;
   border-radius: 3px;
   width: 70%;
-  height: 80%;
+  min-height: 38px;
   padding-left: 16px;
 }
 
@@ -32,7 +47,6 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   height: 200px;
 }
 .message > label {
@@ -56,27 +70,49 @@ button {
   background-color: orange;
 }
 span {
+width: 100vw;
   color: red;
-  margin: 8px 5%;
+  margin: 8px ;
 }
 textarea{
   padding-left: 16px;
   padding-top: 8px;
+  resize: none;
 }
+.red-color{
+  color: red;
+}
+
+ .fa-solid {
+  color: orange;
+  transition:color 0.5s ;
+}
+
 
 @media screen and (min-width: 1200px) {
   form {
-    margin: 0 30vw;
+    margin: 0 20vw;
   }
 
-  fieldset {
-    width: 40vw;
+
+  .contenu {
+    
+    width: 60vw;
+
   }
   button {
-    margin: 16px 10vw;
+    margin: 4vh auto;
   }
 
   span {
+   
     font-size: small;
   }
+  .container-column-mobile{
+    display: flex;
+    flex-direction: row;
+  
+
+  }
+
 }

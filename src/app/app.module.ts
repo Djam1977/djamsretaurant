@@ -12,6 +12,7 @@ import { ConceptComponent } from './pages/concept/concept.component';
 import { FlatComponent } from './pages/flat/flat.component';
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageErrorComponent } from './pages/page-error/page-error.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConceptComponent,
     FlatComponent,
     GoldenBookComponent,
+    PageErrorComponent,
     
    
   ],
