@@ -1,0 +1,45 @@
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+
+  font-size: xx-large;
+  color: white;
+  background-image: url("../../../assets/img/menu.png");
+  background-size: cover; 
+
+}
+
+.gender-container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+  
+}
+.genre-flats{
+  display: flex;
+
+}
+.flat-info{
+width: 100%;
+display: flex;
+
+}
+.font{font-weight: bold;}
+.title-and-ingredients{
+flex-direction: column;
+margin-top: 10px;
+width: 90%;
+}
+.price{
+  display: flex;
+
+ text-align: right;
+  width: 10%;
+  height: 100%;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  h2{background-size: contain; }
+}

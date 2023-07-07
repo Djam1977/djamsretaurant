@@ -1,9 +1,60 @@
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 10%;
+  border-radius: 5px;
 
+  border: 1.5px black solid;
+}
+
+.button-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.rotation {
+  transform: rotate(45deg);
+}
+.fa-circle-plus {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-container div {
+  padding: 2px;
+}
+.name-for-comment {
+  background-color: orange;
+  opacity: 0.6;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message-for-comment {
+  margin: 8px;
+}
+.note-for-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
 form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding-top: 4vh;
+
+  columns: reverse;
+  transition: 0.5s;
 }
 
 label {
@@ -11,7 +62,7 @@ label {
 
   align-items: center;
   width: 20%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 fieldset {
@@ -19,20 +70,18 @@ fieldset {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   min-height: 48px;
   flex-wrap: wrap;
 }
-fieldset>div{
+fieldset > div {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 100vw;
 }
 /* etoile bien disposées */
-i{
- width: calc(70%/5);
-  
+i {
+  width: calc(70% / 5);
 }
 input {
   border: 1.5px black solid;
@@ -46,11 +95,19 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 200px;
+  flex-direction: row;
+  /* height: 200px; */
+  margin-bottom: 2vh;
 }
 .message > label {
   height: 48px;
+}
+
+.message-error-red,
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenu {
@@ -70,49 +127,63 @@ button {
   background-color: orange;
 }
 span {
-width: 100vw;
+  width: 100%;
   color: red;
-  margin: 8px ;
+  margin: 8px;
 }
-textarea{
+textarea {
   padding-left: 16px;
   padding-top: 8px;
   resize: none;
 }
-.red-color{
+.red-color {
   color: red;
 }
 
- .fa-solid {
+.fa-solid {
   color: orange;
-  transition:color 0.5s ;
+  transition: color 0.5s;
 }
 
-
 @media screen and (min-width: 1200px) {
+  .allcomments {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100vw;
+  }
+  .comment-container {
+    width: 30%;
+    margin: 3% 5%;
+  }
+
   form {
     margin: 0 20vw;
   }
 
-
   .contenu {
-    
     width: 60vw;
-
   }
   button {
     margin: 4vh auto;
   }
 
   span {
-   
     font-size: small;
   }
-  .container-column-mobile{
+  .container-column-mobile {
     display: flex;
     flex-direction: row;
-  
-
   }
-
+  .message {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2vh;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex-direction: column;
+  }
 }

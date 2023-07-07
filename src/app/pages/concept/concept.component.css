@@ -15,8 +15,9 @@ img {
   .concept-decript {
     display: flex;
     flex-wrap: wrap;
-    margin: 4vh 4vw 0vh 4vh;
+    margin: 4vh 2vw 0vh 4vh;
     /* height: calc(60vh - 24px) */
+  
   
   }
   /* Dans le bloc,la pseudo classe nth-child fait le tour des p avec une itération pour pouvoir mettre le texte au dessus des images */
@@ -38,5 +39,8 @@ img {
   img:hover {
     transform: scale(1.03);
     transition: 0.8s;
+  }
+  p{
+    padding: 0 2vw 0 2vw ;
   }
 }

@@ -13,6 +13,9 @@ import { FlatComponent } from './pages/flat/flat.component';
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+// import { AuthGuardComponent } from './core/auth-guard/auth-guard.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { PageErrorComponent } from './pages/page-error/page-error.component';
     FlatComponent,
     GoldenBookComponent,
     PageErrorComponent,
+    AdminPageComponent,
+    // AuthGuardComponent,
+
     
    
   ],

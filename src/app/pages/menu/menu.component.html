@@ -1,0 +1,24 @@
+
+<h1>La Carte</h1>
+
+<div class="menu-decript">
+  <div class="gender-container" *ngFor="let gender of genreToDisplay">
+    
+    <h2>{{ gender.name | uppercase }} </h2>
+
+
+    <div class="genre-flats" *ngFor="let menu of menusToDisplay">
+      <div class="flat-info" *ngIf=" gender.id=== menu.gender " >
+        <div class="title-and-ingredients">
+          <p class="font"> {{menu.name }}</p>
+          <p>{{ menu.ingredients }}</p>
+        </div>
+        <p class="price">
+          {{ menu.price }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
