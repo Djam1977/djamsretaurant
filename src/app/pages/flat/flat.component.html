@@ -1,1 +1,22 @@
-<p>flat works!</p>
+<div *ngIf="flat">
+  <h2>{{ flat.titre }}</h2>
+  <div class="container-flatchoise">
+    <div class="flatchoise">
+      <img [src]="flat.image" />
+      <div class="all-ingredient-flat">
+        <!-- Pour chaque element du tableau d'objet je demande {{....}} -->
+        <div *ngFor="let ingredient of flat.ingredients">
+          <p>{{ ingredient.name }}</p>
+
+          <img
+            class="small-ingredient"
+            src="https://www.themealdb.com/images/ingredients/{{
+              ingredient.nameEn
+            }}-Small.png"
+          />
+        </div>
+      </div>
+    </div>
+    <p class="price">{{ flat.price }} €</p>
+  </div>
+</div>

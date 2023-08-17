@@ -6,8 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { forbidenExtensionValidator } from 'src/app/shared/validators/forbidenExtensionValidator';
-import { commentsGoldenBook } from 'src/app/shared/data/fake-data';
+
 import { Comment } from 'src/app/shared/interfaces/comment';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 @Component({
   selector: 'app-golden-book',
   templateUrl: './golden-book.component.html',
@@ -20,14 +21,13 @@ export class GoldenBookComponent {
   // création d'un formgroupe
   commentForm = this.formbuilder.group({
     // création pour chacun des input un formcontrol
-    firstnameController: ['', [Validators.required]],
-    lastnameController: ['', [Validators.required]],
-    emailController: [
+    firstname: ['', [Validators.required]],
+    lastname: ['', [Validators.required]],
+    email: [
       '',
       [Validators.required, Validators.email, forbidenExtensionValidator],
     ],
-    noteController: [0, [this.noteValidator]],
-    messageController: [
+    message: [
       '',
       [
         Validators.required,
@@ -35,32 +35,54 @@ export class GoldenBookComponent {
         Validators.maxLength(2000),
       ],
     ],
+    rating: [0, [this.noteValidator]],
   });
+  sucess: string = '';
 
- 
- changeCommentVisible: boolean = false;
-  constructor(private formbuilder: FormBuilder) {}
+  changeCommentVisible: boolean = false;
+  constructor(
+    private formbuilder: FormBuilder,
+    private apiService: ApiServiceService
+  ) {}
 
   ngOnInit(): void {
     this.getCommentsFromAPI();
   }
-// ici la methode ne retourne pas de valeurs, la variable initié à false retourne true et inverserment graçe au !
-  
-  onClickaddcomment(): void {
-    this.changeCommentVisible = !this.changeCommentVisible
+  // ici la methode ne retourne pas de valeurs, la variable initié à false retourne true et inverserment graçe au !
+
+  onClickAddComment(): void {
+    this.changeCommentVisible = !this.changeCommentVisible;
   }
 
   getCommentsFromAPI() {
-    // this.apiService.getUnapprovedComments().subscribe((data) => {
-    //   this.comments = data;
-    //   this.commentsToDisplay = data;
-    // });
-    this.commentsToDisplay = commentsGoldenBook;
+    this.apiService.getComments().subscribe((data) => {
+      this.commentsToDisplay = data;
+      // Mon [] commentsTodisplay est = à mon [] commentsToDisplay filtre  pour chaque objet (item) de mon [] et verifie si = true, "je pourrais ne pas indiquer === true, mais cela aide à comprendre le code"
+
+      this.commentsToDisplay = this.commentsToDisplay.filter(
+        (item) => item.verifiedByAdmin === true
+      );
+    });
   }
 
-  onSubmitForm() {}
+  onSubmitForm() {
+    if (this.commentForm.valid) {
+      this.apiService.postComment(this.commentForm).subscribe((data) => {
+        this.sucess = data.message;
+
+        setTimeout(() => {
+          this.sucess = '';
+        }, 3000); /* rappel après 2 secondes = 2000 millisecondes */
+        this.commentForm.controls.firstname.setValue('');
+        this.commentForm.controls.lastname.setValue('');
+        this.commentForm.controls.message.setValue('');
+        this.commentForm.controls.rating.setValue(0);
+        this.commentForm.controls.email.setValue('');
+      });
+    }
+  }
   setNoteComment(star: number) {
-    this.commentForm.controls.noteController.setValue(star);
+    this.commentForm.controls.rating.setValue(star);
   }
   noteValidator(control: AbstractControl): ValidationErrors | null {
     //  verifie si true ou false correspond à > 0

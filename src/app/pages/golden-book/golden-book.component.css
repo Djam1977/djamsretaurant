@@ -4,7 +4,7 @@
   margin: 3% 10%;
   border-radius: 5px;
 
-  border: 1.5px black solid;
+  border: 1.5px var(--secondary-color) solid;
 }
 
 .button-plus {
@@ -27,7 +27,7 @@
   padding: 2px;
 }
 .name-for-comment {
-  background-color: orange;
+  background-color: var(--tertiary-color);
   opacity: 0.6;
   height: 32px;
   display: flex;
@@ -62,7 +62,6 @@ label {
 
   align-items: center;
   width: 20%;
-  /* height: 100%; */
 }
 
 fieldset {
@@ -84,7 +83,7 @@ i {
   width: calc(70% / 5);
 }
 input {
-  border: 1.5px black solid;
+  border: 1.5px var(--secondary-color) solid;
   border-radius: 3px;
   width: 70%;
   min-height: 38px;
@@ -96,7 +95,6 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  /* height: 200px; */
   margin-bottom: 2vh;
 }
 .message > label {
@@ -118,13 +116,13 @@ span {
 }
 
 button {
-  border: 1.5px black solid;
+  border: 1.5px var(--secondary-color) solid;
   box-shadow: 1px 1px 5px rgb(97, 95, 95);
   border-radius: 3px;
   width: 20vw;
   height: 5vh;
   margin: 16px 40vw;
-  background-color: orange;
+  background-color: var(--tertiary-color);
 }
 span {
   width: 100%;
@@ -141,8 +139,15 @@ textarea {
 }
 
 .fa-solid {
-  color: orange;
+  color: var(--tertiary-color);
   transition: color 0.5s;
+}
+.sucess {
+  width: 100%;
+  text-align: center;
+  color: green;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1200px) {

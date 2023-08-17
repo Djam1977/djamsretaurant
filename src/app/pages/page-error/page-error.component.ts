@@ -4,11 +4,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-page-error',
   templateUrl: './page-error.component.html',
-  styleUrls: ['./page-error.component.css']
+  styleUrls: ['./page-error.component.css'],
 })
 export class PageErrorComponent {
-  
-  
   constructor(private router: Router) {}
 
   redirectToHome() {

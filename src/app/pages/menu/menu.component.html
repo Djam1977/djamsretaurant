@@ -1,24 +1,30 @@
-
-<h1>La Carte</h1>
-
-<div class="menu-decript">
-  <div class="gender-container" *ngFor="let gender of genreToDisplay">
-    
-    <h2>{{ gender.name | uppercase }} </h2>
-
-
-    <div class="genre-flats" *ngFor="let menu of menusToDisplay">
-      <div class="flat-info" *ngIf=" gender.id=== menu.gender " >
+<h1>
+  <div class="color-orange">L</div>
+  a carte
+</h1>
+<div class="flat-decript">
+  <div class="gender-container" *ngFor="let type of typeToDisplay">
+    <h2>{{ type.name | uppercase }}</h2>
+    <div
+      [routerLink]="['/plat', flat.id]"
+      class="genre-flats"
+      *ngFor="let flat of flatsToDisplay"
+    >
+      <div class="flat-info" *ngIf="flat.type.name === type.name">
         <div class="title-and-ingredients">
-          <p class="font"> {{menu.name }}</p>
-          <p>{{ menu.ingredients }}</p>
+          <p class="font">{{ flat.titre }}</p>
+
+          <div *ngFor="let ingredient of flat.ingredients">
+            {{ ingredient.name | uppercase }}
+
+            <!-- <div *ngFor="let item of ingredientsListToDisplay">
+              <p *ngIf="item.id === ingredient">{{item.name}}</p>
+            </div> -->
+          </div>
         </div>
-        <p class="price">
-          {{ menu.price }}
-        </p>
+
+        <p class="price">{{ flat.price }} €</p>
       </div>
     </div>
   </div>
 </div>
-
-

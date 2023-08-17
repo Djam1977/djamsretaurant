@@ -1,7 +1,19 @@
-export interface Menu {
+
+
+export interface Flat {
   id: number;
-  gender: number;
-  name: string;
+  type: {id:number, name:string};
+  titre: string;
   price: number;
-  ingredients: string;
+  ingredients: [{name:string, nameEn:string,}];
+  image: string;
+}
+
+export interface NewFlat {
+  
+  type: {id:number, name:string};
+  titre: string;
+  price: number;
+  ingredients: [{name:string, nameEn:string,}];
+  image: string;
 }

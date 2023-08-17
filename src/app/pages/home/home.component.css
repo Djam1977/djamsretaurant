@@ -1,7 +1,6 @@
-
 .titre {
   background-image: url("/assets/img/restotitre.jpg");
-background-size: cover;
+  background-size: cover;
   font-size: 24px;
 
   text-align: center;
@@ -26,7 +25,7 @@ p {
 }
 
 hr {
-  background-color: orange;
+  background-color: var(--tertiary-color);
   height: 0.5vh;
   margin: 2vh;
 }
@@ -42,6 +41,5 @@ hr {
     height: 1vh;
     /* margin:haut et bas  de 8vh et margin droit et gauche de 16vh*/
     margin: 8vh 24vh;
-   
   }
 }

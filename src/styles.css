@@ -4,16 +4,17 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: Montserrat, sans-serif;
+ 
 }
 .color-orange {
   font-size: 3rem;
-  color: orange;
+  color:var(--tertiary-color);
 }
 
 :root {
   --primary-color: white;
   --secondary-color: black;
+  --tertiary-color: orange;
 }
 
 .display-none-mobile {
@@ -25,7 +26,32 @@ h1 {
   margin-top: 4vh;
   font-size: 3em;
 }
+table {
+  border-collapse: collapse;
 
+  margin: auto;
+  width: 80%;
+  max-width: 80vw;
+}
+
+thead {
+  background-color: var(--tertiary-color);
+
+  padding: 3px;
+  border: 1px solid var(--secondary-color);
+}
+th {
+  padding: 10px;
+}
+td {
+  border: 1px solid var(--secondary-color);
+  padding: 5px;
+  text-align: center;
+}
+.fa-trash-can {
+
+  color:red;
+}
 @media screen and (min-width: 1025px) {
   .display-none-mobile {
     display: block;
@@ -33,4 +59,8 @@ h1 {
 }
 
 @media screen and (min-width: 1200px) {
+  .fa-solid{
+
+    font-size: 2rem;
+  }
 }

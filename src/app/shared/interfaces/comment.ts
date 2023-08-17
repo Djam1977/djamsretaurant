@@ -4,5 +4,13 @@ export interface Comment {
   lastname: string;
   email: string;
   message: string;
-  note: number;
+  rating: number;
+  verifiedByAdmin: boolean;
+}
+export interface NewComment {
+  firstname: string;
+  lastname: string;
+  email: string;
+  message: string;
+  rating: number;
 }

@@ -1,45 +1,54 @@
-h2{
+h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-
-  font-size: xx-large;
-  color: white;
-  background-image: url("../../../assets/img/menu.png");
-  background-size: cover; 
-
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  background-image: url("https://chez-regis.fr/wp-content/uploads/2020/12/Bandeau-Restaurant.jpg");
+  background-size: cover;
 }
-
 .gender-container {
   display: flex;
   flex-direction: column;
   margin: 24px;
-  
 }
-.genre-flats{
+.genre-flats {
   display: flex;
-
 }
-.flat-info{
-width: 100%;
-display: flex;
-
-}
-.font{font-weight: bold;}
-.title-and-ingredients{
-flex-direction: column;
-margin-top: 10px;
-width: 90%;
-}
-.price{
+.flat-info {
+  width: 100%;
   display: flex;
-
- text-align: right;
+}
+.font {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.title-and-ingredients {
+  flex-direction: column;
+  margin-top: 10px;
+  width: 90%;
+  font-size: 0.8rem;
+}
+.price {
+  display: flex;
+  text-align: right;
   width: 10%;
   height: 100%;
   align-items: center;
+  font-size: 1rem;
 }
+
 @media screen and (min-width: 1200px) {
-  h2{background-size: contain; }
+  h2 {
+    height: 20vh;
+
+    background-repeat: no-repeat;
+  }
+  .font {
+    cursor: pointer;
+  }
+  .price {
+    font-size: 1.5rem;
+  }
 }

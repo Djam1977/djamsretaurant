@@ -1,0 +1,40 @@
+<h1>
+  <div class="color-orange">P</div>
+  age Admin
+</h1>
+<div class="connection-of-admin">
+  <form
+    class="registred"
+    (ngSubmit)="signInForm.valid && onSubmitForm()"
+    [formGroup]="signInForm"
+    #myForm="ngForm"
+  >
+    <fieldset>
+      <label for="username">Identifiant: </label>
+      <input
+        type="text"
+        placeholder="Taper votre Identifiant"
+        formControlName="username"
+      />
+      <div *ngIf="myForm.submitted && signInForm.controls.username.errors">
+        <span *ngIf="signInForm.controls.username.errors?.['required']">
+          Un champs est requis
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <label for="password">Mot de passe: </label>
+      <input
+        type="password"
+        placeholder="Taper votre mot de passe"
+        formControlName="password"
+      />
+      <div *ngIf="myForm.submitted && signInForm.controls.password.errors">
+        <span *ngIf="signInForm.controls.password.errors?.['required']">
+          Un password est requis.
+        </span>
+      </div>
+    </fieldset>
+    <button type="submit">Valider</button>
+  </form>
+</div>

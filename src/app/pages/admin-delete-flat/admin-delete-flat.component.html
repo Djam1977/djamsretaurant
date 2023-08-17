@@ -1,0 +1,23 @@
+<H2>Suppression des Plats</H2>
+<button routerLink="/admin">Retour page Admin</button>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Nom du plat</th>
+      <th>Suppression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flat of flatsToDisplay">
+      <td>{{ flat.type.name }}</td>
+      <td>{{ flat.titre }}</td>
+      <td>
+        <i
+          (click)="deleteFlatFromApiService(flat.id)"
+          class="fa-solid fa-trash-can"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

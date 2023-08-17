@@ -1,5 +1,5 @@
 h1 {
-  color: red;
+  color: var(--tertiary-color);
 }
 .container-for-page-error404 {
   margin: 4vh 4vh;
@@ -22,11 +22,15 @@ a {
   justify-content: center;
   align-items: center;
   font-size: large;
-  color: red;
+  color: var(--tertiary-color);
+  cursor: pointer;
+  padding-top: 20px;
 }
 
 @media screen and (min-width: 1200px) {
-
+  h2 {
+    font-size: 2rem;
+  }
   .container-for-img {
     display: flex;
     justify-content: center;
@@ -36,6 +40,7 @@ a {
     width: 20%;
   }
   a:hover {
-    cursor: default;
+    transform: scale(1.4);
+    transition: 0.5s;
   }
 }

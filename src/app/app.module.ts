@@ -14,8 +14,11 @@ import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-// import { AuthGuardComponent } from './core/auth-guard/auth-guard.component';
-
+import { AdminConnectComponent } from './pages/admin-page/admin-connect/admin-connect.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminDeleteFlatComponent } from './pages/admin-delete-flat/admin-delete-flat.component';
+ import { AuthGuardGuard } from './guards/auth-guard.guard';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -29,13 +32,17 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     GoldenBookComponent,
     PageErrorComponent,
     AdminPageComponent,
-    // AuthGuardComponent,
+    AdminConnectComponent,
+    AdminDeleteFlatComponent,
+ 
+
 
     
    
   ],
-  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,HttpClientModule],
+  // providers: [httpInterceptorProviders],
+  providers: [AuthGuardGuard, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,16 +4,22 @@
     src="../../../assets/img/assiette.png"
     alt="logo du restaurant Djam'S, avec une fourchette et un couteau comme embléme sur fond noir"
   />
-<!-- ma directive ngclass change le nom de la classe en fonction de la valeur du booleen, ici la variable visible true la variable visible invisible false -->
+  <!-- ma directive ngclass change le nom de la classe en fonction de la valeur du booleen, ici la variable visible true la variable visible invisible false -->
   <nav
     [ngClass]="menuBurgerVisible ? 'visible' : 'visible invisible'"
     (click)="changeMenuBurgerVisible()"
   >
-  <!-- router link me permet de créér un lien de navigation -->
+    <!-- router link me permet de créér un lien de navigation -->
     <a routerLink="/">Accueil</a>
     <a routerLink="concept">Concept</a>
     <a routerLink="menu">Menu</a>
     <a routerLink="message">Livre d'Or</a>
+    <a *ngIf="authService.isConnected && authService.isAdmin" routerLink="admin"
+      >admin</a
+    >
+    <a *ngIf="!authService.isConnected" routerLink="admin-connexion"
+      >Admin-connect</a
+    >
   </nav>
   <!-- Ma directive ngclass change le nom de la classe fa-solid fa-xmark pour true et fa-solid fa-bars pour false classe dans le css-->
   <i
