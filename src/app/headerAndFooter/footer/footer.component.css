@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: var(--primary-color);
-  position: fixed;
+  /* position: fixed; */
   left: 0vw;
   bottom: 0vh;
   width: 100vw;

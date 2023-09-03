@@ -36,6 +36,7 @@
 }
 .message-for-comment {
   margin: 8px;
+  font-size: 1.5em;
 }
 .note-for-comment {
   display: flex;

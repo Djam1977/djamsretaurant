@@ -49,15 +49,15 @@ fieldset {
   align-items: center;
   margin-top: 16px;
 }
-button {
+/* button {
   border: 1.5px var(--secondary-color) solid;
   box-shadow: 1px 1px 5px rgb(97, 95, 95);
   border-radius: 3px;
-  width: 40vw;
+  width: 32vw;
   height: 5vh;
-  margin: 16px 30vw;
+  margin: 16px 34vw;
   background-color: var(--tertiary-color);
-}
+} */
 .cache {
   display: none;
 }
@@ -120,10 +120,18 @@ button {
 table {
   margin: 2vh;
 }
+
 @media screen and (min-width: 1200px) {
   .container-column-mobile {
     display: flex;
     flex-direction: column;
     margin: 0 30rem;
   }
+/* button{
+  width: 8vw;
+  margin: 16px 46vw;
+} */
+.comment{
+  margin: 0 65%;
+}
 }

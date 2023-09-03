@@ -12,10 +12,10 @@
     >
       <div class="flat-info" *ngIf="flat.type.name === type.name">
         <div class="title-and-ingredients">
-          <p class="font">{{ flat.titre }}</p>
+          <p class="font">{{ flat.titre | titlecase }}</p>
 
           <div *ngFor="let ingredient of flat.ingredients">
-            {{ ingredient.name | uppercase }}
+            {{ ingredient.name | titlecase}}
 
             <!-- <div *ngFor="let item of ingredientsListToDisplay">
               <p *ngIf="item.id === ingredient">{{item.name}}</p>
