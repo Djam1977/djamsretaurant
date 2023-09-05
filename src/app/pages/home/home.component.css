@@ -5,7 +5,7 @@
 
   text-align: center;
   /*hauteur 100vh ( 4vh de logo+ 4vh de header +24px de padding dans le header) */
-  height: calc(92vh - 24px);
+  height: calc(92vh - 16px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,9 +34,7 @@ hr {
   .titre {
     font-size: 32px;
   }
-  img {
-    height: 100%;
-  }
+
   hr {
     height: 1vh;
     /* margin:haut et bas  de 8vh et margin droit et gauche de 16vh*/

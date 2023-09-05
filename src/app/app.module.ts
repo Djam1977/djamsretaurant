@@ -9,16 +9,21 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ConceptComponent } from './pages/concept/concept.component';
 
-import { FlatComponent } from './pages/flat/flat.component';
+
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AdminConnectComponent } from './pages/admin-page/admin-connect/admin-connect.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminDeleteFlatComponent } from './pages/admin-delete-flat/admin-delete-flat.component';
+
  import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { httpInterceptorProviders } from './interceptors';
+import { DishComponent } from './pages/dish/dish.component';
+import { AdminDeleteDishComponent } from './pages/admin-delete-dish/admin-delete-dish.component';
+import { AdminAddDishComponent } from './pages/admin-add-dish/admin-add-dish.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,12 +33,13 @@ import { httpInterceptorProviders } from './interceptors';
     HomeComponent,
     MenuComponent,
     ConceptComponent,
-    FlatComponent,
+   DishComponent,
     GoldenBookComponent,
     PageErrorComponent,
     AdminPageComponent,
     AdminConnectComponent,
-    AdminDeleteFlatComponent,
+AdminDeleteDishComponent,
+AdminAddDishComponent
  
 
 

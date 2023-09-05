@@ -4,13 +4,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ConceptComponent } from './pages/concept/concept.component';
 
 import { MenuComponent } from './pages/menu/menu.component';
-import { FlatComponent } from './pages/flat/flat.component';
+
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AdminConnectComponent } from './pages/admin-page/admin-connect/admin-connect.component';
 import { AdminGuard } from './guards/admin.guard';
-import { AdminDeleteFlatComponent } from './pages/admin-delete-flat/admin-delete-flat.component';
+import { DishComponent } from './pages/dish/dish.component';
+import { AdminDeleteDishComponent } from './pages/admin-delete-dish/admin-delete-dish.component';
+import { AdminAddDishComponent } from './pages/admin-add-dish/admin-add-dish.component';
 const routes: Routes = [
   {
     path: '',
@@ -32,7 +34,7 @@ const routes: Routes = [
 
   {
     path: 'plat/:id',
-    component: FlatComponent,
+    component: DishComponent,
   },
   {
     path: 'admin',
@@ -45,13 +47,18 @@ const routes: Routes = [
     // canActivate: [VisitorGuard],
   },
   {
-    path:'admin-delete-flat',
-    component: AdminDeleteFlatComponent
+    path:'admin-delete-dish',
+    component: AdminDeleteDishComponent
+  },
+  {
+    path:'admin-add-dish',
+    component: AdminAddDishComponent
   },
   {
     path: 'error404',
     component: PageErrorComponent,
   },
+
   {
     path: '**',
     redirectTo: 'error404',

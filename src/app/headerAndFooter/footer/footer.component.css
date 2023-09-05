@@ -2,12 +2,11 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: var(--primary-color);
-  /* position: fixed; */
+  position: fixed;
   left: 0vw;
   bottom: 0vh;
   width: 100vw;
   height: 4vh;
- 
   align-items: center;
 }
 
@@ -31,10 +30,6 @@ footer {
   width: 16px;
   height: 16px;
 }
-
-
-
-
 
 @media screen and (min-width: 1025px) {
   .contact-details > p {

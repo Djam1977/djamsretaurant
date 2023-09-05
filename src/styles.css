@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-
+  font-family: var(--text-font);
 
     
 }
@@ -14,14 +14,14 @@
 }
 
 :root {
-  --text-font: 
+  --text-font:'Montserrat', sans-serif;
   --primary-color: white;
   --secondary-color: black;
   --tertiary-color: orange;
 }
-
+/* body 4vh car c'est la hauteur footer */
 body{
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
   }
 .display-none-mobile {
   display: none;
@@ -62,15 +62,24 @@ button {
   border: 1.5px var(--secondary-color) solid;
   box-shadow: 1px 1px 5px rgb(97, 95, 95);
   border-radius: 3px;
-  width: 32vw;
+  width: 120px;
   height: 5vh;
   margin: 16px 34vw;
   background-color: var(--tertiary-color);
 }
+.sucess {
+  width: 100%;
+  text-align: center;
+  color: green;
+  font-size: 2em;
+  font-weight: bold;
+}
+ 
 @media screen and (min-width: 1025px) {
   .display-none-mobile {
     display: block;
   }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -81,5 +90,8 @@ button {
   button{
     width: 8vw;
     margin: 16px 46vw;
+  }
+  .margin-desktop{
+    margin: 0 24vh;
   }
 }

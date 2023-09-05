@@ -4,7 +4,7 @@ import { Comment } from '../shared/interfaces/comment';
 import { Observable } from 'rxjs';
 import { variable } from '../shared/variable';
 import { FormGroup } from '@angular/forms';
-import { Flat } from '../shared/interfaces/menu';
+import { Dish } from '../shared/interfaces/menu';
 
 @Injectable({
   providedIn: 'root',
@@ -33,30 +33,23 @@ export class ApiServiceService {
 
   // création requetes protocle http pour mettre en relation avec le back avec les uri.
   // sur l'URI je veux la methode Get
-  getFlats(): Observable<Flat[]> {
-    return this.http.get<Flat[]>(variable.URLAPI + '/flats');
+  getDishes(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(variable.URLAPI + '/dishes');
   }
-  getFlatById(id: number): Observable<any> {
-    return this.http.get<any>(variable.URLAPI + '/flats/' + id);
+  getDishById(id: number): Observable<any> {
+    return this.http.get<any>(variable.URLAPI + '/dishes/' + id);
+  }
+postDish(object:object): Observable<any>{
+return this.http.post<any>(variable.URLAPI+'/dishes',object)
+
+}
+
+  deleteDish(id: number): Observable<any> {
+    return this.http.delete<any>(variable.URLAPI + '/dishes/' + id);
   }
 
-  postFlat(object: FormGroup): Observable<any> {
-    const body = {
-      ...object.value,
-      ingredients: object.value.ingredients.map((id: number) => {
-        return { id };
-      }),
-      type: { id: +object.value.type },
-      titre: object.value.name,
-    };
-    return this.http.post<any>(variable.URLAPI + '/flats', body);
-  }
-  deleteFlat(id: number): Observable<any> {
-    return this.http.delete<any>(variable.URLAPI + '/flats/' + id);
-  }
-
-  putFlat(id: number, object: FormGroup): Observable<any> {
-    return this.http.put<any>(variable.URLAPI + '/flats/' + id, object.value);
+  putDish(id: number, object: FormGroup): Observable<any> {
+    return this.http.put<any>(variable.URLAPI + '/dishes/' + id, object.value);
   }
 
   getIngredients(): Observable<any> {

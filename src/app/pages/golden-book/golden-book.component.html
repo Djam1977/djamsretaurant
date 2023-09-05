@@ -159,10 +159,12 @@
       <div
         class="message-error-red"
         *ngIf="myForm.submitted && commentForm.controls.message.errors"
-      ></div>
+      ><span> Un message est requis. </span></div>
     </fieldset>
 
     <button type="submit">Soumettre</button>
-    <p class="sucess">{{ sucess }}</p>
+   
+  
   </form>
+  <p class="sucess">{{ messageReponse }}</p>
 </div>

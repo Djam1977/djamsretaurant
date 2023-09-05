@@ -18,6 +18,7 @@ export class GoldenBookComponent {
   //  Je defini variable du texte pour créer un compteur
   textMessageForCount: string = '';
   commentsToDisplay!: Comment[];
+  
   // création d'un formgroupe
   commentForm = this.formbuilder.group({
     // création pour chacun des input un formcontrol
@@ -37,7 +38,8 @@ export class GoldenBookComponent {
     ],
     rating: [0, [this.noteValidator]],
   });
-  sucess: string = '';
+
+  messageReponse: string = '';
 
   changeCommentVisible: boolean = false;
   constructor(
@@ -68,16 +70,19 @@ export class GoldenBookComponent {
   onSubmitForm() {
     if (this.commentForm.valid) {
       this.apiService.postComment(this.commentForm).subscribe((data) => {
-        this.sucess = data.message;
+        this.messageReponse = data.message;
 
         setTimeout(() => {
-          this.sucess = '';
-        }, 3000); /* rappel après 2 secondes = 2000 millisecondes */
+          this.messageReponse = '';
+        }, 3000); /* rappel après 3 secondes = 3000 millisecondes */
+
         this.commentForm.controls.firstname.setValue('');
         this.commentForm.controls.lastname.setValue('');
         this.commentForm.controls.message.setValue('');
         this.commentForm.controls.rating.setValue(0);
         this.commentForm.controls.email.setValue('');
+        this.onClickAddComment();
+        
       });
     }
   }
@@ -86,9 +91,9 @@ export class GoldenBookComponent {
   }
   noteValidator(control: AbstractControl): ValidationErrors | null {
     //  verifie si true ou false correspond à > 0
-    const isValid = (control.value as number) > 0;
+    const isValid = (control.value as number) > 0 && (control.value as number)<6;
     // si false
-
+// return isValid ? null :  { note: { value: control.value } }
     if (!isValid) {
       // renvoir un objet clé valeur
 

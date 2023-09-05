@@ -116,15 +116,7 @@ span {
   padding-bottom: 100px;
 }
 
-button {
-  border: 1.5px var(--secondary-color) solid;
-  box-shadow: 1px 1px 5px rgb(97, 95, 95);
-  border-radius: 3px;
-  width: 20vw;
-  height: 5vh;
-  margin: 16px 40vw;
-  background-color: var(--tertiary-color);
-}
+
 span {
   width: 100%;
   color: red;
@@ -143,13 +135,7 @@ textarea {
   color: var(--tertiary-color);
   transition: color 0.5s;
 }
-.sucess {
-  width: 100%;
-  text-align: center;
-  color: green;
-  font-size: 2em;
-  font-weight: bold;
-}
+
 
 @media screen and (min-width: 1200px) {
   .allcomments {

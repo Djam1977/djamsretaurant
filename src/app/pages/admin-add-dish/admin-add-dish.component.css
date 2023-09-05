@@ -1,0 +1,82 @@
+h2 {
+  text-align: center;
+  margin-top: 16px;
+}
+fieldset {
+  margin: 20px;
+  padding: 0;
+  border: 0;
+}
+.hidden {
+  display: none;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px var(--secondary-color) solid;
+  border-radius: 3px;
+  width: 70%;
+  min-height: 38px;
+  padding-left: 16px;
+}
+.ingredients-list {
+  max-height: 10vh;
+  overflow-y: scroll;
+}
+.img-dish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px var(--secondary-color) solid;
+  border-radius: 3px;
+  width: 70%;
+  min-height: 38px;
+  padding-left: 16px;
+}
+.price-dish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px var(--secondary-color) solid;
+  border-radius: 3px;
+  width: 70%;
+  max-width: 200px;
+  min-height: 38px;
+  padding-left: 16px;
+}
+.ingredient-dish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px var(--secondary-color) solid;
+  border-radius: 3px;
+  width: 70%;
+  min-height: 38px;
+  padding-left: 16px;
+}
+
+.ingredient-list {
+  padding-top: 20px;
+}
+span {
+  color: red;
+}
+.button-inline {
+  display: flex;
+  justify-content: space-around;
+}
+.button-inline button {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 1200px) {
+  .margin-desktop {
+    margin: 0 48vh;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}

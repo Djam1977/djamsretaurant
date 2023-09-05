@@ -2,20 +2,21 @@
   <div class="color-orange">L</div>
   a carte
 </h1>
-<div class="flat-decript">
+<div class="dish margin-desktop" >
   <div class="gender-container" *ngFor="let type of typeToDisplay">
     <h2>{{ type.name | uppercase }}</h2>
     <div
-      [routerLink]="['/plat', flat.id]"
-      class="genre-flats"
-      *ngFor="let flat of flatsToDisplay"
+      [routerLink]="['/plat', dish.id]"
+      class="genre-dishes"
+      *ngFor="let dish of dishesToDisplay"
     >
-      <div class="flat-info" *ngIf="flat.type.name === type.name">
+      <div class="dish-info" *ngIf="dish.type.name === type.name">
         <div class="title-and-ingredients">
-          <p class="font">{{ flat.titre | titlecase }}</p>
+          
+          <h3 class="font">{{ dish.titre | titlecase }}</h3>
 
-          <div *ngFor="let ingredient of flat.ingredients">
-            {{ ingredient.name | titlecase}}
+          <div *ngFor="let ingredient of dish.ingredients">
+            {{ ingredient.name | lowercase }}
 
             <!-- <div *ngFor="let item of ingredientsListToDisplay">
               <p *ngIf="item.id === ingredient">{{item.name}}</p>
@@ -23,7 +24,7 @@
           </div>
         </div>
 
-        <p class="price">{{ flat.price }} €</p>
+        <p class="price">{{ dish.price |number: '1.2' }}€</p>
       </div>
     </div>
   </div>

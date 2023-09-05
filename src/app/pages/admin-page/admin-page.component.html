@@ -3,143 +3,15 @@
   age Admin
 </h1>
 
-<div *ngIf="!changeMenuCommentVisible" class="manage-flats">
-  <button (click)="onClickChangePage()" class="flats-button">Retour</button>
-  <form
-    (ngSubmit)="addNewMenuForm.valid && onSubmitForm()"
-    [formGroup]="addNewMenuForm"
-    #myForm="ngForm"
-  >
-    <div class="container-column-mobile">
-      <fieldset>
-        <label for="typeSelected">Type de Plats : </label>
-        <input
-          class="cache"
-          type="number"
-          value="{{ addNewMenuForm.value.type | number }}"
-          name="typeSelected"
-          id="typeSelected"
-        />
-        <select formControlName="type">
-          <option *ngFor="let type of typeToDisplay" value="{{ type.id }}">
-            {{ type.name }}
-          </option>
-        </select>
-        <span
-          *ngIf="addNewMenuForm.controls.type.errors?.['required']&& myForm.submitted"
-        >
-          Le champ requis.
-        </span>
-      </fieldset>
-      <fieldset>
-        <label for="name">Nom du plat : </label>
-        <input
-          class="name"
-          type="text"
-          id="name"
-          placeholder="Tapez le nom du plat"
-          formControlName="name"
-        />
-        <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
-        <div *ngIf="myForm.submitted && addNewMenuForm.controls.name.errors">
-          <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
-          <span *ngIf="addNewMenuForm.controls.name.errors?.['required']">
-            Le champ nom est requis.
-          </span>
-        </div>
-      </fieldset>
-      <fieldset>
-        <label for="img">Image du plat : </label>
-        <input
-          class="img-flat"
-          type="text"
-          id="img"
-          placeholder="Tapez l'url de l'image"
-          formControlName="image"
-        />
-        <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
-        <div *ngIf="myForm.submitted && addNewMenuForm.controls.image.errors">
-          <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
-          <span *ngIf="addNewMenuForm.controls.image.errors?.['required']">
-            Une photo est requise
-          </span>
-        </div>
-      </fieldset>
-      <fieldset>
-        <label for="price">Prix du plat : </label>
-        <input
-          class="price-flat"
-          type="number"
-          id="price"
-          placeholder="Tapez le prix"
-          formControlName="price"
-        />
-        <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
-        <div *ngIf="myForm.submitted && addNewMenuForm.controls.price.errors">
-          <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
-          <span *ngIf="addNewMenuForm.controls.price.errors?.['required']">
-            Un champ est requis
-          </span>
-        </div>
-      </fieldset>
-      <fieldset>
-        <label for="ingredients"> Ingredients du plat : </label>
-
-        <input
-          class="ingredient-flat"
-          type="text"
-          (keyup)="getLettersForFiltersIngredients($event)"
-        />
-        <ul class="ingredients-list">
-          <li *ngFor="let ingredient of ingredientsListToDisplay">
-            <input
-              [checked]="arrayForIngredientsAdd.includes(ingredient.id)"
-              type="checkbox"
-              (click)="chooseIngredients(ingredient.id)"
-            />
-
-            {{ ingredient.name }}
-          </li>
-        </ul>
-        <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstname.errors)verifie si le champs(firstname) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
-        <div
-          *ngIf="myForm.submitted && addNewMenuForm.controls.ingredients.errors"
-        >
-          <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
-          <span
-            *ngIf="addNewMenuForm.controls.ingredients.errors?.['required']"
-          >
-            Un champ est requis
-          </span>
-        </div>
-      </fieldset>
-    </div>
-
-    <button class="submit-flat" type="submit">Soumettre</button>
-  </form>
-
-  <div class="menu-decript">
-    <!-- *ngFor="let menu of menusToDisplay" je fais le tour de chaque plat de la liste des plats
-Pour chaque tour j'affiche name,ingredient,price et icone poubelle -->
-    <div class="Type-flats" *ngFor="let menu of menusToDisplay">
-      <p class="font">{{ menu.titre }}</p>
-
-      <!-- Chaque menu à un icone de poublle lié à lui,chaque tour
-          va envoyer son id si je click dessus -->
-      <!-- <i (click)="deleteMenu(menu.id)" class="fa-solid fa-trash-can"></i> -->
-    </div>
-  </div>
-</div>
-
-<div *ngIf="changeMenuCommentVisible" class="manage-comments">
+<div class="manage-comments">
   <H2>Gestion du livre d'or</H2>
 
   <table *ngIf="commentsToDisplay.length > 0">
     <thead>
       <tr>
-        <th class="comment">Commentaires</th>
-        <th>Validation</th>
-        <th>Suppression</th>
+        <th>Commentaires</th>
+        <th>Valid.</th>
+        <th>Supp.</th>
       </tr>
     </thead>
     <tbody>
@@ -162,11 +34,11 @@ Pour chaque tour j'affiche name,ingredient,price et icone poubelle -->
     </tbody>
   </table>
 
-  <button (click)="onClickChangePage()" class="comments-button">
+  <button routerLink="/admin-add-dish" class="comments-button">
     Ajouter un plat
   </button>
   <div>
-    <button routerLink="/admin-delete-flat">Suppression plat</button>
+    <button routerLink="/admin-delete-dish">Suppression plat</button>
   </div>
 
   <!-- Au click je lance la methode logOutFromService qui est dans la partie TS du composant -->

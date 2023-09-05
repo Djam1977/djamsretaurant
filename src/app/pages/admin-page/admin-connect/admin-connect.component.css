@@ -25,23 +25,12 @@ input {
   padding-left: 16px;
 }
 
-/* button {
-  border: 1.5px var(--secondary-color) solid;
-  box-shadow: 1px 1px 5px rgb(97, 95, 95);
-  border-radius: 3px;
-  width: 32vw;
-  height: 5vh;
-  margin: 16px 34vw;
-  background-color: var(--tertiary-color);
-} */
+
+
 
 @media screen and (min-width: 1200px) {
 
   input {
     width: 24%;
   }
-  /* button{
-    width: 8vw;
-    margin: 16px 46vw;
-  } */
 }

@@ -4,7 +4,7 @@
 </h1>
 
 <H2>Suppression des Plats</H2>
-<button routerLink="/admin">Retour </button>
+
 <table>
   <thead>
     <tr>
@@ -14,15 +14,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let flat of flatsToDisplay">
-      <td>{{ flat.type.name }}</td>
-      <td>{{ flat.titre }}</td>
+    <tr *ngFor="let dish of dishesToDisplay">
+      <td>{{ dish.type.name }}</td>
+      <td>{{ dish.titre }}</td>
       <td>
         <i
-          (click)="deleteFlatFromApiService(flat.id)"
+          (click)="deleteDishFromApiService(dish.id)"
           class="fa-solid fa-trash-can"
         ></i>
       </td>
     </tr>
   </tbody>
 </table>
+<button routerLink="/admin">Retour</button>

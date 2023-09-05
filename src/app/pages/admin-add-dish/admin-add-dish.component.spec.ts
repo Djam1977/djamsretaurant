@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlatComponent } from './flat.component';
+import { AdminAddDishComponent } from './admin-add-dish.component';
 
-describe('FlatComponent', () => {
-  let component: FlatComponent;
-  let fixture: ComponentFixture<FlatComponent>;
+describe('AdminAddDishComponent', () => {
+  let component: AdminAddDishComponent;
+  let fixture: ComponentFixture<AdminAddDishComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlatComponent ]
+      declarations: [ AdminAddDishComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FlatComponent);
+    fixture = TestBed.createComponent(AdminAddDishComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

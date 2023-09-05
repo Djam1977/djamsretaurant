@@ -1,3 +1,10 @@
+.container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(92vh - 16px);
+}
+
 h2 {
   display: flex;
   justify-content: center;
@@ -5,15 +12,17 @@ h2 {
   margin: 24px 8px;
   font-size: xx-large;
   color: var(--tertiary-color);
-  background-color: black;
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 8px;
 }
-.container-flatchoise {
+.container-dish-choice {
   display: flex;
   flex-direction: column;
 }
 
-.flatchoise {
-  margin-top: 32px;
+.dish-choice {
+  margin-bottom: 32px;
 }
 img {
   display: flex;
@@ -25,8 +34,8 @@ img {
 
 p {
   font-size: large;
-  margin-top: 32px;
 
+  text-align: center;
 }
 
 .price {
@@ -35,31 +44,31 @@ p {
   align-items: center;
   color: orange;
   font-size: x-large;
-  margin-top: 32px;
+}
+.ingredient-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .small-ingredient {
   width: 50px;
   height: 50px;
-  text-align: center;
+  margin: 0;
 }
-.all-ingredient-flat {
+.all-ingredient-dish {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  margin-top: 16px;
- 
+  margin-top: 24px;
 }
 @media screen and (min-width: 1000px) {
   h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 24px 16px;
     font-size: 48px;
   }
-  .container-flatchoise {
+  .container-dish-choice {
     display: flex;
   }
   img {
@@ -69,4 +78,8 @@ p {
     width: 30%;
     margin: 0 35%;
   }
-}
+
+  .container-center {
+    height: calc(96vh - 136px);
+  
+}}

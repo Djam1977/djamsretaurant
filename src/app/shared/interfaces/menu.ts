@@ -1,6 +1,6 @@
 
 
-export interface Flat {
+export interface Dish {
   id: number;
   type: {id:number, name:string};
   titre: string;
@@ -9,7 +9,7 @@ export interface Flat {
   image: string;
 }
 
-export interface NewFlat {
+export interface NewDish {
   
   type: {id:number, name:string};
   titre: string;

@@ -1,0 +1,24 @@
+
+<div class="margin-desktop container-center" *ngIf="dish">
+  <h2>{{ dish.titre }}</h2>
+  <div class="container-dish-choice">
+    <div class="dish-choice">
+      <img [src]="dish.image" />
+      <div class="all-ingredient-dish">
+        <!-- Pour chaque element du tableau d'objet je demande {{....}} -->
+        <div class="ingredient-container" *ngFor="let ingredient of dish.ingredients">
+          <p>{{ ingredient.name }}</p>
+
+          <img
+            class="small-ingredient"
+            src="https://www.themealdb.com/images/ingredients/{{
+              ingredient.nameEn
+            }}-Small.png"
+          />
+        </div>
+      </div>
+    </div>
+    <p class="price">{{ dish.price }} €</p>
+  </div>
+</div>
+

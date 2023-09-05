@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Flat } from 'src/app/shared/interfaces/menu';
 import { Type } from 'src/app/shared/interfaces/type';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { ApiServiceService } from 'src/app/services/api-service.service';
@@ -10,20 +9,20 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  flatsToDisplay: any[] = [];
+  dishesToDisplay: any[] = [];
   typeToDisplay!: Type[];
   ingredientsListToDisplay: Ingredient[] = [];
 
   constructor(private apiService: ApiServiceService) {}
   ngOnInit(): void {
-    this.getFlatsFromApiService();
+    this.getDishesFromApiService();
     // this.getIngredientsFromApiService();
     this.getTypesFromApiService();
   }
 
-  getFlatsFromApiService() {
-    this.apiService.getFlats().subscribe((data) => {
-      this.flatsToDisplay = data;
+  getDishesFromApiService() {
+    this.apiService.getDishes().subscribe((data) => {
+      this.dishesToDisplay = data;
     });
   }
 
