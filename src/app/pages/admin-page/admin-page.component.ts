@@ -16,19 +16,7 @@ export class AdminPageComponent {
   comment!: Comment;
   commentSelected!: number;
 
-  // au click du html la methode est déclenché et réceptionne le "menu .id" envoyé html
- 
 
-  // deleteMenu(id: number) {
-  //refait le tour complet de la liste de menu
-  // for (let i = 0; i < this.menusList.length; i++) {
-  //  et regarde Si l'id envoyé en argument de la méthode
-  // if (this.menusList[i].id === id) {
-  // Si id trouvé retire l'objet de la liste de menu affichée
-  //       this.menusToDisplay.splice(i, 1);
-  //     }
-  //   }
-  // }
   constructor(
 
     private formbuilder: FormBuilder,

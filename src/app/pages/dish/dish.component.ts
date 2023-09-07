@@ -24,7 +24,7 @@ export class DishComponent {
     this.route.params.subscribe((params) => {
       this.menuId = parseInt(params['id']);
 
-      // this.getMenuFromApi();
+ 
       this.getDishByIdFromApi();
     });
   }

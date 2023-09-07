@@ -6,17 +6,17 @@
 <div class="manage-comments">
   <H2>Gestion du livre d'or</H2>
 
-  <table *ngIf="commentsToDisplay.length > 0">
+  <table *ngIf="commentsToDisplay && commentsToDisplay.length > 0  "  >
     <thead>
       <tr>
-        <th>Commentaires</th>
+        <th class="width-max">Commentaires</th>
         <th>Valid.</th>
         <th>Supp.</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let comment of commentsToDisplay; let i = index">
-        <td>{{ comment.message }}</td>
+        <td class="width-max">{{ comment.message }}</td>
         <td>
           <i
             (click)="acceptCommentFromService(comment.id, comment)"
