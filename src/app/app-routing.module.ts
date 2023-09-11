@@ -45,7 +45,7 @@ const routes: Routes = [
   {
     path: 'admin-connexion',
     component: AdminConnectComponent,
-    canActivate: [VisitorGuard],
+    
   },
   {
     path:'admin-delete-dish',
