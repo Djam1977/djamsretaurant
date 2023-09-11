@@ -28,8 +28,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  margin: 0 20%;
+  max-width: 60%;
+  margin: auto;
 }
 
 p {
@@ -75,8 +75,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    margin: 0 35%;
+    max-width: 400px;
+    max-height: 300px;
+    
   }
 
   .container-center {

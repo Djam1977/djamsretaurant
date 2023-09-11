@@ -22,9 +22,11 @@ export class VisitorGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      if(localStorage.getItem('USER_INFOS')){
-        return  false;
-      }
-      else{
-    return true}
-    }}
+    if (localStorage.getItem('USER_INFOS')) {
+      this.router.navigate(['/admin'])
+      return false;
+    } else {
+      return true;
+    }
+  }
+}

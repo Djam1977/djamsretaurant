@@ -13,13 +13,13 @@
     <div
       class="comment-container"
       *ngFor="let comment of commentsToDisplay"
-      [style.display]="comment.verifiedByAdmin === true ? 'flex' : 'none'"
+      [style]="comment.verifiedByAdmin ===true ? 'display:flex' : 'display: none'"
     >
       <p class="name-for-comment">
         {{ comment.lastname | uppercase }} {{ comment.firstname | titlecase }}
       </p>
 
-      <p></p>
+ 
       <div class="note-for-comment">
         <i
           *ngFor="let i of [0, 1, 2, 3, 4]"

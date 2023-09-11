@@ -7,13 +7,11 @@ import { Dish } from 'src/app/shared/interfaces/menu';
 @Component({
   selector: 'app-dish',
   templateUrl: './dish.component.html',
-  styleUrls: ['./dish.component.css']
+  styleUrls: ['./dish.component.css'],
 })
 export class DishComponent {
-
   menuId!: number;
   dish!: Dish;
-  ingredientsListToDisplay!: Ingredient[];
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +22,6 @@ export class DishComponent {
     this.route.params.subscribe((params) => {
       this.menuId = parseInt(params['id']);
 
- 
       this.getDishByIdFromApi();
     });
   }

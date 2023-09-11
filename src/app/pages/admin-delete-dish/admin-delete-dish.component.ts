@@ -8,12 +8,12 @@ import { Dish } from 'src/app/shared/interfaces/menu';
   styleUrls: ['./admin-delete-dish.component.css'],
 })
 export class AdminDeleteDishComponent {
+ 
+
+  dishesToDisplay!: Dish[];
   ngOnInit() {
     this.getDishesFromApiService();
   }
-
-  dishesToDisplay!: Dish[];
-
   constructor(private apiService: ApiServiceService) {}
 
   getDishesFromApiService() {

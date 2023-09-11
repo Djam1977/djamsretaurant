@@ -13,6 +13,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { DishComponent } from './pages/dish/dish.component';
 import { AdminDeleteDishComponent } from './pages/admin-delete-dish/admin-delete-dish.component';
 import { AdminAddDishComponent } from './pages/admin-add-dish/admin-add-dish.component';
+import { VisitorGuard } from './guards/visitor.guard';
 const routes: Routes = [
   {
     path: '',
@@ -44,15 +45,17 @@ const routes: Routes = [
   {
     path: 'admin-connexion',
     component: AdminConnectComponent,
-    // canActivate: [VisitorGuard],
+    canActivate: [VisitorGuard],
   },
   {
     path:'admin-delete-dish',
-    component: AdminDeleteDishComponent
+    component: AdminDeleteDishComponent,
+    canActivate: [AdminGuard],
   },
   {
     path:'admin-add-dish',
-    component: AdminAddDishComponent
+    component: AdminAddDishComponent,
+    canActivate: [AdminGuard],
   },
   {
     path: 'error404',

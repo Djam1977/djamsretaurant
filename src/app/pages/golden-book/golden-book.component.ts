@@ -18,7 +18,7 @@ export class GoldenBookComponent {
   //  Je defini variable du texte pour créer un compteur
   textMessageForCount: string = '';
   commentsToDisplay!: Comment[];
-  
+
   // création d'un formgroupe
   commentForm = this.formbuilder.group({
     // création pour chacun des input un formcontrol
@@ -82,7 +82,6 @@ export class GoldenBookComponent {
         this.commentForm.controls.rating.setValue(0);
         this.commentForm.controls.email.setValue('');
         this.onClickAddComment();
-        
       });
     }
   }
@@ -91,9 +90,10 @@ export class GoldenBookComponent {
   }
   noteValidator(control: AbstractControl): ValidationErrors | null {
     //  verifie si true ou false correspond à > 0
-    const isValid = (control.value as number) > 0 && (control.value as number)<6;
+    const isValid =
+      (control.value as number) > 0 && (control.value as number) < 6;
     // si false
-// return isValid ? null :  { note: { value: control.value } }
+    // return isValid ? null :  { note: { value: control.value } }
     if (!isValid) {
       // renvoir un objet clé valeur
 
