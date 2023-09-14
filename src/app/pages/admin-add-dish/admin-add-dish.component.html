@@ -42,9 +42,9 @@
       />
       <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->
       <div *ngIf="myForm.submitted && addNewMenuForm.controls.name.errors">
-        <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
+        <!-- vérifie si un champ de formulaire appelé "name" est vide ou non. S'il est vide, il affiche le message "Le champ est obligatoire". -->
         <span *ngIf="addNewMenuForm.controls.name.errors?.['required']">
-          Le champ nom est requis.
+          Un champ est requis
         </span>
       </div>
     </fieldset>

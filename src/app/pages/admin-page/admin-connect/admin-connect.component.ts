@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 @Component({
   selector: 'app-admin-connect',
@@ -20,7 +20,7 @@ export class AdminConnectComponent {
     private formbuilder: FormBuilder,
     private authService: AuthServiceService,
     private router: Router,
-    private apiService: ApiServiceService
+    private apiService: ApiService
   ) {}
   signInForm = this.formbuilder.group({
     username: ['', [Validators.required]],

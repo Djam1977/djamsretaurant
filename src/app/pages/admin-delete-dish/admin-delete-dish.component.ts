@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 import { Dish } from 'src/app/shared/interfaces/menu';
 
 @Component({
@@ -8,13 +8,11 @@ import { Dish } from 'src/app/shared/interfaces/menu';
   styleUrls: ['./admin-delete-dish.component.css'],
 })
 export class AdminDeleteDishComponent {
- 
-
   dishesToDisplay!: Dish[];
   ngOnInit() {
     this.getDishesFromApiService();
   }
-  constructor(private apiService: ApiServiceService) {}
+  constructor(private apiService: ApiService) {}
 
   getDishesFromApiService() {
     this.apiService

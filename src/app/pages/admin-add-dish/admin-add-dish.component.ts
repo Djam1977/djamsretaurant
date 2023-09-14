@@ -1,7 +1,7 @@
 import { Type } from 'src/app/shared/interfaces/type';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { Dish } from 'src/app/shared/interfaces/menu';
@@ -15,7 +15,7 @@ export class AdminAddDishComponent {
   menu!: Dish;
   menusToDisplay!: Dish[];
   typeToDisplay!: Type[];
-  messageReponse: string = "";
+  messageReponse: string = '';
 
   ingredientsListToDisplay!: Ingredient[];
   ingredientsFilter!: Ingredient[];
@@ -23,8 +23,7 @@ export class AdminAddDishComponent {
 
   constructor(
     private formbuilder: FormBuilder,
-    private apiService: ApiServiceService,
-    private authService: AuthServiceService
+    private apiService: ApiService
   ) {}
 
   addNewMenuForm = this.formbuilder.group({
@@ -77,15 +76,14 @@ export class AdminAddDishComponent {
     });
   }
   postDishFromApi() {
-
     if (this.addNewMenuForm.valid) {
-// création de la variable avec un tableau d'ingredients vide
+      // création de la variable avec un tableau d'ingredients vide
       let ingredientsToSend = [];
-// Avec la boucle iteration des id ingrédients dans le tableau pour le transformer en objet
+      // Avec la boucle iteration des id ingrédients dans le tableau pour le transformer en objet
       for (let ingredient of this.arrayForIngredientsAdd) {
         ingredientsToSend.push({ id: ingredient });
       }
-  // Je renvoie ce que le back attent comme typage avec ma variable
+      // Je renvoie ce que le back attent comme typage avec ma variable
       let newDishToSend = {
         type: { id: parseInt(this.addNewMenuForm.value.type!) },
         image: this.addNewMenuForm.value.image,
@@ -94,20 +92,16 @@ export class AdminAddDishComponent {
         titre: this.addNewMenuForm.value.name,
         ingredients: ingredientsToSend,
       };
-  
-      this.apiService.postDish(newDishToSend).subscribe((data)=>{
-   
-        this.messageReponse = data.message 
+
+      this.apiService.postDish(newDishToSend).subscribe((data) => {
+        this.messageReponse = data.message;
         setTimeout(() => {
           this.messageReponse = '';
         }, 3000);
 
-      this.addNewMenuForm.reset();
-      this.arrayForIngredientsAdd=[];
-     
-      } );
-      
+        this.addNewMenuForm.reset();
+        this.arrayForIngredientsAdd = [];
+      });
     }
-    
   }
 }

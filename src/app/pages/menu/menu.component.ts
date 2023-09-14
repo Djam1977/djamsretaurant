@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Type } from 'src/app/shared/interfaces/type';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   typeToDisplay!: Type[];
   ingredientsListToDisplay: Ingredient[] = [];
 
-  constructor(private apiService: ApiServiceService) {}
+  constructor(private apiService: ApiService) {}
   ngOnInit(): void {
     this.getDishesFromApiService();
     // this.getIngredientsFromApiService();

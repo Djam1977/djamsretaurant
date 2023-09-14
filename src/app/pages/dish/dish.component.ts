@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { Dish } from 'src/app/shared/interfaces/menu';
 
@@ -13,10 +13,7 @@ export class DishComponent {
   menuId!: number;
   dish!: Dish;
 
-  constructor(
-    private route: ActivatedRoute,
-    private apiService: ApiServiceService
-  ) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {

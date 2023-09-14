@@ -8,7 +8,7 @@ import {
 import { forbidenExtensionValidator } from 'src/app/shared/validators/forbidenExtensionValidator';
 
 import { Comment } from 'src/app/shared/interfaces/comment';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-golden-book',
   templateUrl: './golden-book.component.html',
@@ -44,7 +44,7 @@ export class GoldenBookComponent {
   changeCommentVisible: boolean = false;
   constructor(
     private formbuilder: FormBuilder,
-    private apiService: ApiServiceService
+    private apiService: ApiService
   ) {}
 
   ngOnInit(): void {

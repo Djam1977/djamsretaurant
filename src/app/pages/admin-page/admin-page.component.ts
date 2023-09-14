@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiServiceService } from 'src/app/services/api-service.service';
+import { ApiService } from 'src/app/services/api.service';
 import { Comment } from 'src/app/shared/interfaces/comment';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 
@@ -10,26 +10,19 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
   styleUrls: ['./admin-page.component.css'],
 })
 export class AdminPageComponent {
- 
   commentsToDisplay!: Comment[];
- 
+
   comment!: Comment;
   commentSelected!: number;
 
-
   constructor(
-
     private formbuilder: FormBuilder,
-    private apiService: ApiServiceService,
+    private apiService: ApiService,
     private authService: AuthServiceService
   ) {}
 
-
-
   ngOnInit() {
     this.getCommentsFromAPI();
-   
-   
 
     // Mon [] commentsTodisplay est = à mon [] commentsToDisplay filtre  l'item et verifie si =  false
     // this.commentsToDisplay = this.commentsToDisplay.filter((item) => item.isVerifiedByAdmin=== false);
@@ -60,5 +53,4 @@ export class AdminPageComponent {
   logOutFromService(): void {
     this.authService.logOut();
   }
-
 }

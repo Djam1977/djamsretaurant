@@ -39,10 +39,8 @@ export class AuthServiceService {
   logOut(): void {
     // Vide le local storage
     localStorage.removeItem('USER_INFOS');
-    //Retour page acceuil et aprés (.then) rafraichir la page
-    this.router.navigate(['/']).then(() => {
-      location.reload();
-    });
+    //Retour page acceuil 
+    this.router.navigate(['/']);
   }
 
   // création dans le shared d'une variable URLAPI pour pouvoir l'utiliser partout et si l'URL change je ne la changerais que dans le varible.ts
@@ -57,6 +55,7 @@ export class AuthServiceService {
     const jwt: any = jwt_decode(userInfoFromBackend.accessToken);
 
     const expiresAt = new Date(jwt.exp * 1000);
+
     const userInfoUpdate = {
       id: userInfoFromBackend.id,
       username: userInfoFromBackend.username,
@@ -68,7 +67,5 @@ export class AuthServiceService {
     };
 
     localStorage.setItem('USER_INFOS', JSON.stringify(userInfoUpdate));
-    this.isConnected = true;
-    this.isAdmin = userInfoFromBackend.roles.includes('ROLE_ADMIN');
-  }
+}
 }

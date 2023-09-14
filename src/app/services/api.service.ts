@@ -7,9 +7,10 @@ import { FormGroup } from '@angular/forms';
 import { Dish } from '../shared/interfaces/menu';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ApiServiceService {
+export class ApiService {
+
   constructor(private http: HttpClient) {}
 
   getComments(): Observable<Comment[]> {
