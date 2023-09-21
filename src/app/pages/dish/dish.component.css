@@ -77,10 +77,9 @@ p {
     align-items: center;
     max-width: 400px;
     max-height: 300px;
-    
   }
 
   .container-center {
     height: calc(96vh - 136px);
-  
-}}
+  }
+}

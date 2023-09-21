@@ -13,13 +13,12 @@
     <div
       class="comment-container"
       *ngFor="let comment of commentsToDisplay"
-      [style]="comment.verifiedByAdmin ===true ? 'display:flex' : 'display: none'"
+      [style]="comment.verifiedByAdmin === true ? 'display:flex' : 'display:none'"
     >
       <p class="name-for-comment">
         {{ comment.lastname | uppercase }} {{ comment.firstname | titlecase }}
       </p>
 
- 
       <div class="note-for-comment">
         <i
           *ngFor="let i of [0, 1, 2, 3, 4]"
@@ -159,12 +158,12 @@
       <div
         class="message-error-red"
         *ngIf="myForm.submitted && commentForm.controls.message.errors"
-      ><span> Un message est requis. </span></div>
+      >
+        <span> Un message est requis. </span>
+      </div>
     </fieldset>
 
     <button type="submit">Soumettre</button>
-   
-  
   </form>
   <p class="sucess">{{ messageReponse }}</p>
 </div>

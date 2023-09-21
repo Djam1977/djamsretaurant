@@ -1,10 +1,8 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ConceptComponent } from './pages/concept/concept.component';
-
 import { MenuComponent } from './pages/menu/menu.component';
-
 import { GoldenBookComponent } from './pages/golden-book/golden-book.component';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
@@ -18,7 +16,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    
   },
   {
     path: 'concept',
@@ -45,15 +42,14 @@ const routes: Routes = [
   {
     path: 'admin-connexion',
     component: AdminConnectComponent,
-    
   },
   {
-    path:'admin-delete-dish',
+    path: 'admin-delete-dish',
     component: AdminDeleteDishComponent,
     canActivate: [AdminGuard],
   },
   {
-    path:'admin-add-dish',
+    path: 'admin-add-dish',
     component: AdminAddDishComponent,
     canActivate: [AdminGuard],
   },
@@ -66,7 +62,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'error404',
   },
-  
 ];
 
 @NgModule({

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { Dish } from 'src/app/shared/interfaces/menu';
 
 @Component({

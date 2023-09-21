@@ -14,7 +14,6 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   min-height: 100px;
 }
 input {
@@ -25,12 +24,7 @@ input {
   padding-left: 16px;
 }
 
-
-
-
-
 @media screen and (min-width: 1200px) {
-
   input {
     width: 24%;
   }

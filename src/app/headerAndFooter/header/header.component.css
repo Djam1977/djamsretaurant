@@ -34,7 +34,7 @@ i {
 }
 
 .header nav a:hover {
-  color: gray;
+  color: var(--tertiary-color);
   filter: blur(0.3px);
 }
 

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import jwt_decode from 'jwt-decode';
 import { Router } from '@angular/router';
-import { variable } from '../shared/variable';
+import { URLAPI } from '../shared/variable';
 @Injectable({
   providedIn: 'root',
 })
@@ -39,16 +39,16 @@ export class AuthServiceService {
   logOut(): void {
     // Vide le local storage
     localStorage.removeItem('USER_INFOS');
-    //Retour page acceuil 
+    //Retour page acceuil
     this.router.navigate(['/']);
   }
 
   // création dans le shared d'une variable URLAPI pour pouvoir l'utiliser partout et si l'URL change je ne la changerais que dans le varible.ts
   signin(user: FormGroup) {
-    return this.http.post(variable.URLAPI + '/auth/signin', user.value);
+    return this.http.post(URLAPI + '/auth/signin', user.value);
   }
   // signup(user: FormGroup) {
-  //   return this.http.post(variable.URLAPI + '/auth/signup', user.value);
+  //   return this.http.post(uRLAPI + '/auth/signup', user.value);
   // }
 
   public setSession(userInfoFromBackend: any) {
@@ -67,5 +67,5 @@ export class AuthServiceService {
     };
 
     localStorage.setItem('USER_INFOS', JSON.stringify(userInfoUpdate));
-}
+  }
 }

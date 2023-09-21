@@ -1,3 +1,2 @@
-export const variable = {
-  URLAPI: 'http://localhost:8080/api',
-}
+export const URLAPI =  'http://localhost:8080/api'
+

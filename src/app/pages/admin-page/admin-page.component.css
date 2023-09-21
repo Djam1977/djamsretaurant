@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .manage-comments {
@@ -24,7 +23,7 @@
 table {
   margin: 2vh;
 }
-.width-max{
+.width-max {
   max-width: 200px;
 }
 

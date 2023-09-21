@@ -2,7 +2,6 @@ import { Type } from 'src/app/shared/interfaces/type';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { Dish } from 'src/app/shared/interfaces/menu';
 

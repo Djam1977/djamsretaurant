@@ -1,5 +1,5 @@
 //
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors} from '@angular/forms';
 // function récupére le control
 export function forbidenExtensionValidator(
   control: AbstractControl
