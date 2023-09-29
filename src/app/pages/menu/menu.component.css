@@ -10,6 +10,9 @@ h2 {
   background-image: url("../../../assets/img/Bandeau-Restaurant.jpg");
   background-size: cover;
 }
+.margin-desktop1 {
+  color: white;
+}
 .gender-container {
   display: flex;
   flex-direction: column;

@@ -29,10 +29,9 @@ export class AdminGuard implements CanActivate {
         new Date(infosLocaleStorages.expiresAt).getTime() > new Date().getTime()
       ) {
         return true;
-      } 
-    } 
-      this.auth.logOut();
-      return false;
-    
+      }
+    }
+    this.auth.logOut();
+    return false;
   }
 }

@@ -1,5 +1,8 @@
+<div class="margin-desktop container-center" *ngIf="!dish">
+  <h2>Je n'ai pas trouvé de plat</h2>
+</div>
 <div class="margin-desktop container-center" *ngIf="dish">
-  <h2>{{ dish.titre }}</h2>
+  <h2>{{ dish.titre | uppercase }}</h2>
   <div class="container-dish-choice">
     <div class="dish-choice">
       <img [src]="dish.image" />
@@ -20,6 +23,6 @@
         </div>
       </div>
     </div>
-    <p class="price">{{ dish.price }} €</p>
+    <p class="price">{{ dish.price | number : "1.2" }} €</p>
   </div>
 </div>

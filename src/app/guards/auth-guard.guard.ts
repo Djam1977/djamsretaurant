@@ -13,8 +13,6 @@ import { AuthServiceService } from '../services/auth-service.service';
   providedIn: 'root',
 })
 export class AuthGuardGuard implements CanActivate {
-
-
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

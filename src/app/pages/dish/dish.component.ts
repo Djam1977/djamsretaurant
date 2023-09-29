@@ -23,8 +23,8 @@ export class DishComponent {
   }
 
   getDishByIdFromApi() {
-    this.apiService
-      .getDishById(this.menuId)
-      .subscribe((data) => (this.dish = data));
+    this.apiService.getDishById(this.menuId).subscribe((data) => {
+      this.dish = data;
+    });
   }
 }

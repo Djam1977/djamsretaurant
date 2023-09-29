@@ -23,7 +23,7 @@ export class VisitorGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (localStorage.getItem('USER_INFOS')) {
-      this.router.navigate(['/admin'])
+      this.router.navigate(['/admin']);
       return false;
     } else {
       return true;

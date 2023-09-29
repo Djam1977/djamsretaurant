@@ -12,4 +12,5 @@ export interface UserSend {
 }
 export interface LoginUser {
   username: string;
-  password: string;}
+  password: string;
+}

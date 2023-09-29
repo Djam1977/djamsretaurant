@@ -2,7 +2,8 @@
   <div class="color-orange">L</div>
   a carte
 </h1>
-<div class="dish margin-desktop">
+<!-- <h2 class="dish margin-desktop1" *ngIf="!typeToDisplay || !dishesToDisplay">Je n'ai pas trouvé de menu </h2> -->
+<div class="dish margin-desktop" *ngIf="typeToDisplay && dishesToDisplay">
   <div class="gender-container" *ngFor="let type of typeToDisplay">
     <h2>{{ type.name | uppercase }}</h2>
     <div
@@ -16,13 +17,8 @@
 
           <div *ngFor="let ingredient of dish.ingredients">
             {{ ingredient.name | lowercase }}
-
-            <!-- <div *ngFor="let item of ingredientsListToDisplay">
-              <p *ngIf="item.id === ingredient">{{item.name}}</p>
-            </div> -->
           </div>
         </div>
-
         <p class="price">{{ dish.price | number : "1.2" }}€</p>
       </div>
     </div>

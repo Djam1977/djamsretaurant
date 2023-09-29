@@ -13,7 +13,9 @@
     <div
       class="comment-container"
       *ngFor="let comment of commentsToDisplay"
-      [style]="comment.verifiedByAdmin === true ? 'display:flex' : 'display:none'"
+      [style]="
+        comment.verifiedByAdmin === true ? 'display:flex' : 'display:none'
+      "
     >
       <p class="name-for-comment">
         {{ comment.lastname | uppercase }} {{ comment.firstname | titlecase }}
@@ -52,6 +54,9 @@
           <span *ngIf="commentForm.controls.lastname.errors?.['required']">
             Le champ nom est requis.
           </span>
+          <span *ngIf="commentForm.controls.lastname.errors?.['maxlength']">
+            Le nom ne doit pas dépasser 255 caractères.
+          </span>
         </div>
       </fieldset>
 
@@ -68,6 +73,9 @@
           <!-- vérifie si un champ de formulaire appelé "lastname" est vide ou non. S'il est vide, il affiche le message "Le nom est obligatoire". -->
           <span *ngIf="commentForm.controls.firstname.errors?.['required']">
             Le champ prénom est requis.
+          </span>
+          <span *ngIf="commentForm.controls.firstname.errors?.['maxlength']">
+            Le prénom ne doit pas dépasser 255 caractères.
           </span>
         </div>
       </fieldset>
@@ -91,6 +99,9 @@
           </span>
           <span *ngIf="commentForm.controls.email.errors?.['extension']">
             Votre email doit se terminer par '.fr' ou '.com' ou '.net'
+          </span>
+          <span *ngIf="commentForm.controls.email.errors?.['maxlength']">
+            Votre email ne doit pas dépasser 255 caractères
           </span>
         </div>
         <!-- la premiere condition (myForm.submitted) verifie si le formulaire a été soumis , la deuxieme (commentForm.controls.firstnameController.errors)verifie si le champs(firstnameController) du formulaire (commentForm) contient des erreurs si il contient des erreur il affichera le messages  -->

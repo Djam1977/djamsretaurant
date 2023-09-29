@@ -6,9 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { forbidenExtensionValidator } from 'src/app/shared/validators/forbidenExtensionValidator';
-
 import { Comment } from 'src/app/shared/interfaces/comment';
 import { ApiService } from 'src/app/services/api.service';
+
 @Component({
   selector: 'app-golden-book',
   templateUrl: './golden-book.component.html',
@@ -22,11 +22,16 @@ export class GoldenBookComponent {
   // création d'un formgroupe
   commentForm = this.formbuilder.group({
     // création pour chacun des input un formcontrol
-    firstname: ['', [Validators.required]],
-    lastname: ['', [Validators.required]],
+    firstname: ['', [Validators.required, Validators.maxLength(255)]],
+    lastname: ['', [Validators.required, Validators.maxLength(255)]],
     email: [
       '',
-      [Validators.required, Validators.email, forbidenExtensionValidator],
+      [
+        Validators.required,
+        Validators.email,
+        Validators.maxLength(255),
+        forbidenExtensionValidator,
+      ],
     ],
     message: [
       '',

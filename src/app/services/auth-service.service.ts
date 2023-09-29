@@ -47,9 +47,6 @@ export class AuthServiceService {
   signin(user: FormGroup) {
     return this.http.post(URLAPI + '/auth/signin', user.value);
   }
-  // signup(user: FormGroup) {
-  //   return this.http.post(uRLAPI + '/auth/signup', user.value);
-  // }
 
   public setSession(userInfoFromBackend: any) {
     const jwt: any = jwt_decode(userInfoFromBackend.accessToken);

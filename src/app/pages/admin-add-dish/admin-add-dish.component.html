@@ -5,7 +5,8 @@
 <H2>Ajouter un plat</H2>
 <p class="sucess">{{ messageReponse }}</p>
 
-<form class="margin-desktop"
+<form
+  class="margin-desktop"
   (ngSubmit)="addNewMenuForm.valid && onSubmitForm()"
   [formGroup]="addNewMenuForm"
   #myForm="ngForm"
@@ -28,7 +29,7 @@
       <span
         *ngIf="addNewMenuForm.controls.type.errors?.['required']&& myForm.submitted"
       >
-        Le champ requis.
+        Un champ est requis
       </span>
     </fieldset>
     <fieldset>
@@ -113,8 +114,7 @@
     </fieldset>
   </div>
   <div class="button-inline">
-  <button  type="submit">Soumettre</button>
-  <button routerLink="/admin">Retour</button>
-</div>
+    <button type="submit">Soumettre</button>
+    <button routerLink="/admin">Retour</button>
+  </div>
 </form>
-

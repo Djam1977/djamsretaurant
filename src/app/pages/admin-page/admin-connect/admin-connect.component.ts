@@ -16,16 +16,25 @@ export class AdminConnectComponent {
     private router: Router,
     private apiService: ApiService
   ) {}
+  messageReponse: string = '';
   signInForm = this.formbuilder.group({
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
   onSubmitForm() {
     if (this.signInForm.valid) {
-      this.authService.signin(this.signInForm).subscribe((data) => {
-        this.authService.setSession(data);
-        this.router.navigate(['/admin']);
-      });
+      this.authService.signin(this.signInForm).subscribe(
+        (data) => {
+          this.authService.setSession(data);
+          this.router.navigate(['/admin']);
+        },
+        (error) => {
+          if (error.status === 401) {
+            this.messageReponse =
+              'Votre Identifiant et ou votre mot de passe est invalide';
+          }
+        }
+      );
     }
   }
 
