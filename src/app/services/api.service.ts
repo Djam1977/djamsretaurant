@@ -18,20 +18,21 @@ export class ApiService {
   getCommentById(id: number): Observable<Comment> {
     return this.http.get<Comment>(URLAPI + '/comments' + id);
   }
-  // j'envoi à spring objet'{non ....} du formgroup, avec son endpoint au click
+  // j'envoi à spring objet {nom ...} du formgroup, avec son endpoint au click
   postComment(object: FormGroup): Observable<Comment> {
     return this.http.post<Comment>(URLAPI + '/comments', object.value);
   }
-  //La requete renvoie une  methode delete qui prend en parametre un id de type number,
-  //  return une reponse protocole http avec la variable URI + id
-  deleteComment(id: number): Observable<any> {
-    return this.http.delete<any>(URLAPI + '/comments/' + id);
+  
+  // La requete renvoie une  methode delete qui prend en parametre un id de type number,
+  // return une reponse protocole http avec la variable URI + id
+  deleteComment(id: number): Observable<string> {
+    return this.http.delete<string>(URLAPI + '/comments/' + id);
   }
   putComment(id: number, comment: Comment): Observable<Comment> {
     return this.http.put<Comment>(URLAPI + '/comments/' + id, comment);
   }
 
-  // création requetes protocle http pour mettre en relation avec le back avec les uri.
+  // Création requetes protocle HTTP pour mettre en relation avec le back avec les URI.
   // sur l'URI je veux la methode Get
   getDishes(): Observable<Dish[]> {
     return this.http.get<Dish[]>(URLAPI + '/dishes');
@@ -43,8 +44,8 @@ export class ApiService {
     return this.http.post<any>(URLAPI + '/dishes', object);
   }
 
-  deleteDish(id: number): Observable<any> {
-    return this.http.delete<any>(URLAPI + '/dishes/' + id);
+  deleteDish(id: number): Observable<string> {
+    return this.http.delete<string>(URLAPI + '/dishes/' + id);
   }
 
   putDish(id: number, object: FormGroup): Observable<any> {

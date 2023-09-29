@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Type } from 'src/app/shared/interfaces/type';
 import { Ingredient } from 'src/app/shared/interfaces/ingredients';
 import { ApiService } from 'src/app/services/api.service';
+import { Dish } from 'src/app/shared/interfaces/menu';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  dishesToDisplay: any[] = [];
+  dishesToDisplay!: Dish[];
   typeToDisplay!: Type[];
   ingredientsListToDisplay: Ingredient[] = [];
 

@@ -4,11 +4,11 @@
 </h1>
 
 <div class="button-plus" [ngClass]="changeCommentVisible ? 'rotation' : ''">
-  <i (click)="onClickAddComment()" class="fa-solid fa-circle-plus"></i>
+  <i (click)="onClickAddComment()" class="pointer fa-solid fa-circle-plus"></i>
 </div>
 
 <div class="reverse">
-  <div class="allcomments">
+  <div class="all-comments">
     <!-- :si la vérification de l'admin du  commentaire est === à true alors on le montre sinon on le cache -->
     <div
       class="comment-container"

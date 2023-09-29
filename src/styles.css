@@ -6,10 +6,6 @@
   list-style: none;
   font-family: var(--text-font);
 }
-.color-orange {
-  font-size: 3rem;
-  color: var(--tertiary-color);
-}
 
 :root {
   --text-font: "Montserrat", sans-serif;
@@ -17,22 +13,34 @@
   --secondary-color: black;
   --tertiary-color: orange;
 }
+
+.color-orange {
+  font-size: 3rem;
+  color: var(--tertiary-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 /* body 4vh car c'est la hauteur footer */
 body {
   margin-bottom: 4vh;
 }
+
 .display-none-mobile {
   display: none;
 }
+
 h1 {
   display: flex;
   justify-content: center;
   margin-top: 4vh;
   font-size: 3em;
 }
+
 table {
   border-collapse: collapse;
-
   margin: auto;
   width: 80%;
   max-width: 80vw;
@@ -40,21 +48,24 @@ table {
 
 thead {
   background-color: var(--tertiary-color);
-
   padding: 3px;
   border: 1px solid var(--secondary-color);
 }
+
 th {
   padding: 10px;
 }
+
 td {
   border: 1px solid var(--secondary-color);
   padding: 5px;
   text-align: center;
 }
+
 .fa-trash-can {
   color: red;
 }
+
 button {
   border: 1.5px var(--secondary-color) solid;
   box-shadow: 1px 1px 5px rgb(97, 95, 95);
@@ -73,6 +84,7 @@ button {
   font-size: 2em;
   font-weight: bold;
 }
+
 .denied {
   color: red;
 }
@@ -87,10 +99,13 @@ button {
   .fa-solid {
     font-size: 2rem;
   }
+
   button {
     width: 8vw;
     margin: 16px 46vw;
+    cursor: pointer;
   }
+
   .margin-desktop {
     margin: 0 24vh;
   }
